@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Enervalix</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <img src="enervalix_logo.png" alt="Enervalix Logo" class="logo">
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html#demo-form" class="btn btn-primary">Book a Demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Get in Touch</h1>
+    <p>We'd love to hear from you and discuss how Enervalix can help your organization</p>
+  </section>
+
+  <!-- Contact Content -->
+  <div class="container">
+    <div class="contact-grid">
+      
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p><strong>Email:</strong><br>hr@enervalix.com</p>
+        <p><strong>Phone:</strong><br>+91-XXXX-XXXXXX</p>
+        <p><strong>Address:</strong><br>Bhubaneswar, Odisha, India</p>
+        <p><strong>Business Hours:</strong><br>Monday - Friday: 9:00 AM - 6:00 PM IST<br>Saturday: 10:00 AM - 2:00 PM IST<br>Sunday: Closed</p>
+        
+        <h3 style="margin-top: 2rem;">Follow Us</h3>
+        <p>Stay updated with the latest in energy analytics and sustainability:</p>
+        <p>
+          <a href="#" style="margin-right: 1rem;">LinkedIn</a>
+          <a href="#" style="margin-right: 1rem;">Twitter</a>
+          <a href="#">Facebook</a>
+        </p>
+      </div>
+
+      <!-- Demo Booking Form -->
+      <div>
+        <h3 id="demo-form">Book a Free Demo</h3>
+        <p style="text-align: left; margin-bottom: 2rem;">Fill out the form below and our team will reach out to schedule your personalized demonstration.</p>
+        
+        <form id="demoBookingForm">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="organization">Organization Name</label>
+            <input type="text" id="organization" name="organization">
+          </div>
+
+          <div class="form-group">
+            <label for="org_type">Organization Type</label>
+            <select id="org_type" name="org_type">
+              <option value="">Select type...</option>
+              <option value="factory">Factory / Manufacturing</option>
+              <option value="apartment">Apartment Society</option>
+              <option value="commercial">Commercial Building</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="preferred_date">Preferred Demo Date</label>
+            <input type="date" id="preferred_date" name="preferred_date">
+          </div>
+
+          <div class="form-group">
+            <label for="preferred_time_slot">Preferred Time Slot</label>
+            <select id="preferred_time_slot" name="preferred_time_slot">
+              <option value="">Select time...</option>
+              <option value="morning">Morning (9 AM - 12 PM)</option>
+              <option value="afternoon">Afternoon (12 PM - 3 PM)</option>
+              <option value="evening">Evening (3 PM - 6 PM)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Additional Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your energy management needs..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Demo Request</button>
+        </form>
+
+        <div id="formStatus" class="form-status"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Enervalix</h4>
+        <p>Smart energy and carbon analytics for a sustainable future.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: hr@enervalix.com</li>
+          <li>Phone: +91-XXXX-XXXXXX</li>
+          <li>Address: Bhubaneswar, Odisha</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Enervalix. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Form JavaScript -->
+  <script>
+    document.getElementById('demoBookingForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const formStatus = document.getElementById('formStatus');
+      const submitButton = e.target.querySelector('button[type="submit"]');
+      
+      // Disable submit button
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting...';
+      
+      // Get form data
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        organization: document.getElementById('organization').value,
+        org_type: document.getElementById('org_type').value,
+        preferred_date: document.getElementById('preferred_date').value,
+        preferred_time_slot: document.getElementById('preferred_time_slot').value,
+        message: document.getElementById('message').value
+      };
+      
+      try {
+        const response = await fetch('/api/demo-bookings', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          formStatus.className = 'form-status success';
+          formStatus.style.display = 'block';
+          formStatus.textContent = result.message + ' We\'ll contact you shortly.';
+          
+          // Reset form
+          e.target.reset();
+        } else {
+          formStatus.className = 'form-status error';
+          formStatus.style.display = 'block';
+          formStatus.textContent = result.message || 'An error occurred. Please try again.';
+        }
+      } catch (error) {
+        formStatus.className = 'form-status error';
+        formStatus.style.display = 'block';
+        formStatus.textContent = 'Network error. Please check your connection and try again.';
+      } finally {
+        // Re-enable submit button
+        submitButton.disabled = false;
+        submitButton.textContent = 'Submit Demo Request';
+      }
+    });
+  </script>
+</body>
+</html>
